@@ -90,7 +90,8 @@ public class Spawner : MonoBehaviour
             spawnTile = map.GetTileFromPosition(playerT.position);
         }
         Material tileMat = spawnTile.GetComponent<Renderer>().material;
-        Color initialColor = tileMat.color;
+        // Color initialColor = tileMat.color; bug if player standing on tile, it doesn't reset
+        Color initialColor = Color.white;
         Color flashColor = Color.red;
         float spawnTimer = 0;
 
