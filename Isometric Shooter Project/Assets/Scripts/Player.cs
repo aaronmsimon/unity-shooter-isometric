@@ -43,6 +43,10 @@ public class Player : LivingEntity
             controller.LookAt(pointOfIntersection);
             crosshairs.transform.position = pointOfIntersection;
             crosshairs.DetectTargets(ray);
+            if((new Vector2(pointOfIntersection.x, pointOfIntersection.y) - new Vector2(transform.position.x, transform.position.y)).sqrMagnitude > 1)
+            {
+                gunController.Aim(pointOfIntersection);
+            }
         }
 
         // Weapon input
@@ -53,6 +57,10 @@ public class Player : LivingEntity
         if (Input.GetMouseButtonUp(0))
         {
             gunController.OnTriggerRelease();
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            gunController.Reload();
         }
     }
 }
