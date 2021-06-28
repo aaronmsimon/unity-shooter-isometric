@@ -9040,6 +9040,97 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847982111}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &852611436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 852611438}
+  - component: {fileID: 852611437}
+  - component: {fileID: 852611439}
+  - component: {fileID: 852611440}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &852611437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852611436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 162b61762ea73db42b020d5f1540c49b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &852611438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852611436}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1761743249}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &852611439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852611436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda714a1814691848a21ef8a94631695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainTheme: {fileID: 8300000, guid: 4351f2bf565b348498078a9f21c45402, type: 3}
+  menuTheme: {fileID: 8300000, guid: c673c6b2c92a55245991ce5ad544885e, type: 3}
+--- !u!114 &852611440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852611436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94b2fadbe69a7bd48bb8dc1b9b74e4ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundGroups:
+  - groupID: Impact
+    group:
+    - {fileID: 8300000, guid: 55be2093ee668d443b85cb4e99110abe, type: 3}
+    - {fileID: 8300000, guid: 53533b6a5d2e7e542aa55420626300c4, type: 3}
+    - {fileID: 8300000, guid: 1ff9fdee6e176b046bb7b2aea75a5640, type: 3}
+  - groupID: Enemy Death
+    group:
+    - {fileID: 8300000, guid: 3afee6ec366543248a3b6e266efabc95, type: 3}
+    - {fileID: 8300000, guid: a1b37783f666ad5459ac4c498581db6c, type: 3}
+  - groupID: Enemy Attack
+    group:
+    - {fileID: 8300000, guid: ee23ea54854d37d40b3472d4cc44d80d, type: 3}
+  - groupID: Level Complete
+    group:
+    - {fileID: 8300000, guid: 320adc68f710611418348a89a70acccd, type: 3}
+  - groupID: Player Death
+    group:
+    - {fileID: 8300000, guid: b4b948a85cf012b48afe89bab55918b4, type: 3}
 --- !u!1 &867332282
 GameObject:
   m_ObjectHideFlags: 0
@@ -10460,7 +10551,6 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -10468,14 +10558,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -12572,6 +12654,8 @@ MonoBehaviour:
   - {fileID: 4457529640384756236, guid: 5b070f562f487374aa289adee8f99f13, type: 3}
   - {fileID: 7284754851134153698, guid: b3812ff53c9bb1441ba6ed034653c1dc, type: 3}
   - {fileID: 1278192557233835035, guid: 0384fc8c13bb7cf4aadf27fdaf7a21fc, type: 3}
+  - {fileID: 1056110355740306281, guid: 09d763acfb812bb4989ac4719e3e21a2, type: 3}
+  - {fileID: 5524635379577969005, guid: a95a0f103a2e0594496a449e47f991fa, type: 3}
 --- !u!1 &1114268493
 GameObject:
   m_ObjectHideFlags: 0
@@ -16826,7 +16910,7 @@ GameObject:
   - component: {fileID: 1526033964}
   m_Layer: 0
   m_Name: Crosshairs Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18632,6 +18716,45 @@ Material:
     - _Color: {r: 0.5689035, g: 0.49310344, b: 0.85697764, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
+--- !u!1 &1761743248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1761743249}
+  - component: {fileID: 1761743250}
+  m_Layer: 0
+  m_Name: Audio Listener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1761743249
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761743248}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 852611438}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &1761743250
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761743248}
+  m_Enabled: 1
 --- !u!1 &1772456252
 GameObject:
   m_ObjectHideFlags: 0
