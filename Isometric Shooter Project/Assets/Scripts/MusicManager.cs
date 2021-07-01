@@ -1,24 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MusicManager : MonoBehaviour
 {
     public AudioClip mainTheme;
     public AudioClip menuTheme;
 
+    string sceneName;
+
     // Start is called before the first frame update
     void Start()
     {
-        AudioManager.instance.PlayMusic(menuTheme, 2);
+        // Since it is only called after the first scene, calling it manually here
+        OnLevelWasLoaded(0);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnLevelWasLoaded(int sceneIndex)
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        string newSceneName = SceneManager.GetActiveScene().name;
+        if(newSceneName != sceneName)
         {
-            AudioManager.instance.PlayMusic(mainTheme, 3);
+            sceneName = newSceneName;
+            // since destroying the audio manager, invoking with a small delay so the cross-fading is not lost and destroyed is not called
+            Invoke("PlayMusic", .2f);
+        }
+    }
+
+    void PlayMusic()
+    {
+        AudioClip clipToPlay = null;
+
+        if(sceneName == "Menu")
+        {
+            clipToPlay = menuTheme;
+        } else if(sceneName == "Game")
+        {
+            clipToPlay = mainTheme;
+        }
+
+        if(clipToPlay != null)
+        {
+            AudioManager.instance.PlayMusic(clipToPlay, 2);
+            Invoke("PlayMusic", clipToPlay.length);
         }
     }
 }
